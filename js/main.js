@@ -10,17 +10,17 @@ document.addEventListener("DOMContentLoaded", function(){
 
       var xhrData = this.response;
       var JSONData = JSON.parse(xhrData);
-      var searchArray = JSONData;
 
-      // console.log(searchArray);
+      var searchArray = xhrData
+      // var finalForm = "";
+      JSONData.forEach(function(xhrData){
 
-      var finalForm = "";
-      searchArray.forEach(function(xhrData){
+        var inputHTML = `<input type ="${xhrData.text}"`;
+            id = `"${xhrData.id}"`
+        
 
-        var labelHTML = "<section>";
-            labelHTML += xhrData.label;
-            labelHTML += "</section>";
-            formElement.innerHTML += labelHTML;
+
+        console.log(xhrData);
 
       });
 

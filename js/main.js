@@ -12,15 +12,13 @@ document.addEventListener("DOMContentLoaded", function(){
       var JSONData = JSON.parse(xhrData);
 
       var searchArray = xhrData
-      // var finalForm = "";
+      var finalForm = "";
       JSONData.forEach(function(xhrData){
 
-        var inputHTML = `<input type ="${xhrData.text}"`;
-            id = `"${xhrData.id}"`
+        var inputHTML = `<input type="${xhrData.type}" id="${xhrData.id}">`;
+
         
-
-
-        console.log(xhrData);
+        console.log(inputHTML);
 
       });
 

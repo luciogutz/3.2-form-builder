@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function(){
       var finalDataAll = "";
       // this is a forEach loop that will cycle through the xhrData. function is named arrayData.
       xhrData.forEach(function(arrayData){
-
         var arrayDataPlaceHolder = "";
         // this is an if statement saying that if the arrayData type os equal to "select" then concatinate that information into arrayDataPlaceHolder, and place it using interpolation into the html as a select element.
         if (arrayData.type === "select"){
@@ -25,17 +24,18 @@ document.addEventListener("DOMContentLoaded", function(){
               arrayDataPlaceHolder += `<option label="${optionData.label}" value="${optionData.id}"></option>`;
             });
         // if the following doesnt have the above type called select, then it needs to follow the bellow comand which concatinates the information into finalDataAll, which is a holder for the information and then placed in am input element seperated by the type of information.
-        }else {
-          finalDataAll += `<input class="textInput" placeholder=" ${xhrData.lable}" type="${xhrData.type}" id="${xhrData.id}" icon="${xhrData.icon}"</input>`;
+        } else {
+          var firstNameString = `<input> ${arrayData.label} </input> `;
+          //
+          // finalDataAll += `<input class="textInput" placeholder=" ${arrayData.lable}" type="${arrayData.lable}" id="${arrayData.id}" icon="${arrayData.icon}"</input>`;
+          formElement.innerHTML += firstNameString;
         }
-        console.log(arrayDataPlaceHolder);
         // this concatinates information placed in finalDataAll(everything but the select type), and arrayDataPlaceHolder (holding the select type).
         finalDataAll += arrayDataPlaceHolder;
 
       });
       // this concatinates the combined information and adds it into the HTML.
       formElement.innerHTML += finalDataAll;
-
   });
 // this tells the XMLHttpRequest to call, or go
  xhr.send();

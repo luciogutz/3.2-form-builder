@@ -1,30 +1,39 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-  var formElement = document.querySelector("[data-js='form']");
-
   var xhr = new XMLHttpRequest();
 
   xhr.open("GET", "http://json-data.herokuapp.com/forms");
 
   xhr.addEventListener("load", function(e){
 
-      var xhrData = this.response;
-      var JSONData = JSON.parse(xhrData);
+      var xhrData = JSON.parse(this.response);
 
-      var searchArray = xhrData
-      var finalForm = "";
-      JSONData.forEach(function(xhrData){
+      var formElement = document.querySelector("[data-js='form']");
 
-        var inputHTML = `<input type="${xhrData.type}" id="${xhrData.id}">`;
+      var finalDataAll = "";
+      // console.log(xhrData);
+      xhrData.forEach(function(arrayData){
 
-        
-        console.log(inputHTML);
+        var arrayDataPlaceHolder = "";
+
+        if (arrayData.type === "select"){
+          arrayDataPlaceHolder += `<select class="selector">`;
+
+            arrayData.options.forEach(function(optionData){
+
+              arrayDataPlaceHolder += `<option label="${optionData.label}" value="${optionData.id}"></option>`;
+              console.log(optionData);
+            });
+        }else {
+          finalDataAll += `<input class="textInput" placeholder=" ${xhrData.lable}" type="${xhrData.type}" id="${xhrData.id}" icon="${xhrData.icon}"></input>`;
+        }
+
+        finalDataAll += arrayDataPlaceHolder;
 
       });
-
+      formElement.innerHTML += finalDataAll;
 
   });
-
 
  xhr.send();
 });

@@ -1,4 +1,57 @@
+.button {
+  background-color: #378BC7;
+  border: solid 1px #378BC7;
+  display: inline-block;
+  height: 38px;
+  width: 100px;
+  border-radius: 4px;
+  vertical-align: middle;
+  color: white;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.div__section {
+  margin-right: 1px;
+  height: 80px;
+  width:501px;
+  background-color: #C7DEEF;
+}
+
+.header {
+width: 500px;
+height: 80px;
+line-height: 80px;
+display: inline-block;
+text-align: center;
+background-color: #378BC7;
+margin: 0;
+}
+
 .form__details {
-  height: 500px;
-  width: 150px;
+  height: 450px;
+  width: 490px;
+  margin-left:43px;
+  margin-top: 20px;
+
+}
+
+.formAlign {
+    border: solid 1px lightgrey;
+    border-radius: 4px;
+    margin: 30px 23px 0px 23px;
+    width: 500px;
+    height: 620px;
+}
+
+.textInput {
+  height: 30px;
+  width: 400px;
+  margin-bottom: 15px;
+}
+
+.selector {
+  height: 30px;
+  width: 405px;
+  margin-bottom: 15px;
 }

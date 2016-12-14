@@ -25,11 +25,12 @@ document.addEventListener("DOMContentLoaded", function(){
             });
         // if the following doesnt have the above type called select, then it needs to follow the bellow comand which concatinates the information into finalDataAll, which is a holder for the information and then placed in am input element seperated by the type of information.
         } else {
-          var firstNameString = `<input> ${arrayData.label} </input> `;
-          //
-          // finalDataAll += `<input class="textInput" placeholder=" ${arrayData.lable}" type="${arrayData.lable}" id="${arrayData.id}" icon="${arrayData.icon}"</input>`;
-          formElement.innerHTML += firstNameString;
+          // var firstNameString = `<input> ${arrayData.label} </input> `;
+
+          finalDataAll += `<input class="textInput" placeholder=" ${arrayData.label}" type="${arrayData.type}" id="${arrayData.id}" icon="${arrayData.icon}">`;
+          // formElement.innerHTML += firstNameString;
         }
+        console.log(finalDataAll);
         // this concatinates information placed in finalDataAll(everything but the select type), and arrayDataPlaceHolder (holding the select type).
         finalDataAll += arrayDataPlaceHolder;
 

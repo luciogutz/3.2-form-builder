@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function(){
               // this data from the above loop will be concatinated with arrayDataPlaceHolder and placed in an options element using interpolation.
               arrayDataPlaceHolder += `<option label="${optionData.label}" value="${optionData.id}"></option>`;
             });
-        // if the following doesnt have the above type called select, then it needs to follow the bellow comand which concatinates the information into finalDataAll, which is a holder for the information and then placed in am input element seperated by the type of information.
+        // if the following doesnt have the above type called select, then it needs to follow the below comand which concatinates the information into finalDataAll, which is a holder for the information and then placed in am input element seperated by the type of information.
         } else {
           // var firstNameString = `<input> ${arrayData.label} </input> `;
 
